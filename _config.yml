@@ -4,21 +4,21 @@
 
 inc:
   # Blog Information
-  title:        "A Fitness Story"
-  subtitle:     "Motivate and empower others through your personal fitness achievements"
-  cover_image:  blog-cover.jpg
+  title:        "FitStory"
+  subtitle:     "Motivate and empower others through your personal fitness achievements bundled as a story"
+  cover_image:  cover.jpg
   logo:         logo.png
 
   # Company information
   company:      Klaars Gaming
   url:          https://twitter.com/Landon_Morin
-  facebook:     klaarsgaming
+  facebook:     KlaarsGaming
   twitter:      Landon_Morin
   #gplus:        '101183822199340201470'
   about_link:   /about/
 
   # Product Information
-  #product_link: http://incorporated.sendtoinc.com/
+  product_link: http://FitStory.io
   tagline:      "Aspire To Inspire"
 
   # Comments
@@ -45,7 +45,7 @@ inc:
 
   # Setup your fonts, colors etc at _assets/stylesheets/main.scss
 
-url:         http://afitnessstory.com
+url:         http://FitStory.io
 source:      .
 destination: ./_site
 plugins:     ./_plugins

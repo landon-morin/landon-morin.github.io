@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if page.title %}{{ page.title }} &mdash; {{ site.inc.title }}{% else %}{{ site.inc.title }} &mdash; {{ site.inc.subtitle }}{% endif %}</title>
     {% if site.inc.google_font %}<link href="https://fonts.googleapis.com/css?family={{ site.inc.google_font }}" rel="stylesheet" type="text/css">{% endif %}
+    {% stylesheet main %}
     <link rel="stylesheet" href="/assets/main.css">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="/images/{{ site.inc.logo }}"/>
@@ -36,9 +37,14 @@
             <a class="brand" href="/">
                 <img src="/images/{{ site.inc.logo }}" alt="Inc">
             </a>
-            <a href="/" class="home">Blog</a>
-            {% if site.inc.product_link %}<a href="{{ site.inc.product_link }}">Product</a>{% endif %}
-            {% if site.inc.about_link %}<a href="{{ site.inc.about_link }}">About</a>{% endif %}
+            <a id="nav-toggle" href="#"><span></span></a>
+            <div class="collapse-nav">
+                <ul>
+                    <li><a href="/" class="home">Blog</a></li>
+                    {% if site.inc.product_link %}<li><a href="{{ site.inc.product_link }}">Product</a></li>{% endif %}
+                    {% if site.inc.about_link %}<li><a href="{{ site.inc.about_link }}">About</a></li>{% endif %}
+                </ul>
+            </div>
         </nav>
         {% if site.inc.tagline or site.inc.product_url %}<nav class="tagline">
             {% if site.inc.tagline %}<span>{{ site.inc.tagline }}</span>{% endif %}
@@ -47,14 +53,15 @@
     </header>
 </section>
 
+
+
 {{ content }}
 
 <footer class="site-footer">
     <div class="container">
-        &copy; {{ site.time | date: "%Y" }}
+        <span>{{ site.inc.company }} &copy; {{ site.time | date: "%Y" }}</span>
 
         <nav>
-            <a href="{{ site.inc.url }}">{{ site.inc.company }}</a> &middot;
             <a href="/">Blog</a> &middot;
             {% if site.inc.product_link %}<a href="{{ site.inc.product_link }}">Product</a> &middot; {% endif %}
             {% if site.inc.about_link %}<a href="{{ site.inc.about_link }}">About</a>{% endif %}
@@ -62,17 +69,19 @@
 
         <nav class="social">
             {% if site.inc.twitter %}
-            <a href="https://twitter.com/{{ site.inc.twitter }}" title="Follow on Twitter" target="_blank"><i class="icon icon-twitter black"></i></a>
+            <a class="twitter" href="https://twitter.com/{{ site.inc.twitter }}" title="Follow on Twitter" target="_blank"><i class="icon icon-twitter black"></i></a>
             {% endif %}
             {% if site.inc.facebook %}
-            <a href="http://facebook.com/{{ site.inc.facebook }}" title="Follow on Facebook" target="_blank"><i class="icon icon-facebook black"></i></a>
+            <a class="facebook" href="http://facebook.com/{{ site.inc.facebook }}" title="Follow on Facebook" target="_blank"><i class="icon icon-facebook black"></i></a>
             {% endif %}
-            <a href="/feed.xml" title="RSS Feed">
+            <a class="rss" href="/feed.xml" title="RSS Feed">
                 <i class="icon icon-rss black"></i>
             </a>
         </nav>
-        <p>Incorporated theme by <a href="https://sendtoinc.com">Inc</a></p>
     </div>
 </footer>
+
+{% include _scripts.html %}
+
 </body>
 </html>

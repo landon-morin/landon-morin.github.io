@@ -7,6 +7,7 @@ body {
     -webkit-font-smoothing:antialiased;
     text-rendering:optimizelegibility;
     font-size:17px;
+    max-width: 100%;
 }
 
 .is-visible {
@@ -37,7 +38,7 @@ a {
     transition:all 0.2s ease;
     
     &:hover {
-        color:darken($accent, 50%);
+        color: #444;
         text-decoration:none;
     }
 }
@@ -124,11 +125,10 @@ a {
             margin:1.5em 0 0 0;
         }
         a {
-            color:#fff;
+            color: $twitter;
             border:0;
             width:36px;
             height:36px;
-            border:2px solid rgba(255,255,255,1);
             display:inline-block;
             padding:10px 0;
             border-radius:42px;
@@ -136,22 +136,28 @@ a {
             transition:0.2s all ease;
             line-height:0;
             text-align:center;
-        
+
+            &.twitter {
+                border:2px solid $twitter;
+            }
+            &.facebook {
+                border:2px solid $facebook;
+            }
+            &.rss {
+                border:2px solid $gplus;
+            }
             &:hover {
-                transition:0.2s all ease;
-                background:#fff;
-                
-                .icon-rss {
-                    background-position:1px -11px;
+                transition: 0.5s all ease;
+
+                &.twitter {
+                    background: $twitter;
                 }
-                
-                .icon-twitter {
-                    background-position:0px -15px;
+                &.facebook {
+                    background: $facebook;
                 }
-                
-                .icon-facebook {
-                     background-position:0px -14px;
-                 }
+                &.rss {
+                    background: $gplus;
+                }
             }
         }
     }
@@ -179,8 +185,8 @@ a {
 
 .site-footer {
     padding:5em 0;
-    margin:4em 0 0 0;
-    background:whitesmoke;;
+    margin: 0;
+    background:whitesmoke;
     color:#aaa;
     font-size:0.8em;
     
@@ -190,7 +196,7 @@ a {
         margin:0 0.5em;
         
         &:hover {
-            color:#222;
+            color: $accent;
         }
     }
     
@@ -208,13 +214,14 @@ a {
     
     .social {
         float:right;
+        margin-top: -0.7em;
+        display: inline-block;
         
         a {
-            color:#000;
+            color: $twitter;
             border:0;
             width:36px;
             height:36px;
-            border:2px solid rgba(0,0,0,1);
             display:inline-block;
             padding:10px 0;
             border-radius:42px;
@@ -222,10 +229,28 @@ a {
             transition:0.2s all ease;
             line-height:0;
             text-align:center;
-            opacity:0.3;
 
+            &.twitter {
+                border:2px solid $twitter;
+            }
+            &.facebook {
+                border:2px solid $facebook;
+            }
+            &.rss {
+                border:2px solid $gplus;
+            }
             &:hover {
-                opacity:0.9;
+                transition: 0.5s all ease;
+
+                &.twitter {
+                    background: $twitter;
+                }
+                &.facebook {
+                    background: $facebook;
+                }
+                &.rss {
+                    background: $gplus;
+                }
             }
         }
     }
@@ -279,11 +304,216 @@ a {
     border:2px solid $accent;
     border-radius: 3px;
     color:darken($accent, 5%);
-    transition:none;
+    transition:0.2s all ease;
 
     &:hover {
-        border:2px solid darken($accent, 5%);
-        color:darken($accent, 10%);
-        background:none;
+        color:#FFF;
+        background-color: $accent;
+    }
+}
+
+/* social */
+.share-wrapper {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 3em;
+
+    .share >a {
+      margin-right: 20px;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+    .share >a:last-child {
+      margin-right: 0px;
+    }
+    .getshare input[type="checkbox"] {
+      display: none;
+    }
+    label {
+      cursor: pointer;
+      display: inline-block;
+    }
+    label:before {
+      position: relative;
+      display: inline-block;
+      line-height: 32px;
+      padding: 0px 9px 0px 25px;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+      color: #fff;
+    }
+    .twitter label:before {
+      content: 'Tweet';
+      background: #00acee url("/images/icon/twitter.svg") no-repeat 5px 10px;
+      -webkit-background-size: 14px;
+      -moz-background-size: 14px;
+      background-size: 14px;
+    }
+    .facebook label:before {
+      content: 'Share';
+      background: #3b5998 url("/images/icon/facebook.svg") no-repeat 7px 9px;
+      -webkit-background-size: 7px;
+      -moz-background-size: 7px;
+      background-size: 7px;
+    }
+    .googleplus label:before {
+      content: 'Share';
+      background: #dd4b39 url("/images/icon/googleplus.svg") no-repeat 6px 10px;
+      -webkit-background-size: 14px;
+      -moz-background-size: 14px;
+      background-size: 14px;
+    }
+    .getshare-counter {
+      background: #fff;
+      border: 1px solid $textmuted;
+      padding: 0px 9px;
+      margin-left: 8px;
+      color: $text;
+      line-height: 32px;
+      display: inline-block;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+      position: relative;
+      cursor: pointer;
+    }
+    .getshare-counter:after {
+      content: "";
+      display: block;
+      position: absolute;
+      pointer-events: none;
+      width: 7px;
+      height: 7px;
+      background: #fff;
+      border-left: 1px $textmuted solid;
+      border-bottom: 1px $textmuted solid;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+      left: -5px;
+      top: 12px;
+    }
+}
+
+.pagination-wrapper {
+    $size: 25px;
+    $thickness: 5px;
+    $angle: 40deg;
+    $angleHover: 30deg;
+    $angleActive: 25deg;
+
+    @mixin arrowTransform( $angle, $x: 0, $y: 0 ) {
+      i:first-child {
+        transform: translate( $x, $y ) rotate( $angle );
+        -ms-transform: translate( $x, $y ) rotate( $angle );
+        -webkit-transform: translate( $x, $y ) rotate( $angle );
+      }
+
+      i:nth-child(2) {
+        transform: translate( $x, -$y ) rotate( -$angle );
+        -ms-transform: translate( $x, -$y ) rotate( -$angle );
+        -webkit-transform: translate( $x, -$y ) rotate( -$angle );
+      }
+    }
+
+    a {
+        display: inline-block;
+    }
+    .pagination-left {
+        float: left;
+
+        a {
+            margin-left: 10px;
+        }
+        .label {
+            margin-left: 36px;
+        }
+    }
+    .pagination-right {
+        float: right;
+
+        a {
+            margin-right: -50px;
+        }
+    }
+    .disabled .label {
+        color: $textmuted;
+        cursor: default;
+    }
+    .paginate {
+      position: relative;
+      display: inline;
+      margin-top: 10px;
+      width: $size;
+      height: $size;
+      cursor: pointer;
+      transform: translate3d(0,0,0); // fixes flicker in webkit
+      -ms-transform: translate3d(0,0,0); // fixes flicker in webkit
+      -webkit-transform: translate3d(0,0,0); // fixes flicker in webkit
+      margin-top: -20px;
+
+      &:hover > i{
+        background: #444;;
+      }
+      i {
+        position: absolute;
+        top: 40%;
+        left: 0;
+        width: $size;
+        height: $thickness;
+        border-radius: $thickness / 2;
+        background: $accent;
+        transition: all 0.15s ease;
+      }
+      &.left {
+        i {
+            transform-origin: 2% 50%;
+            -ms-transform-origin: 2% 50%;
+            -webkit-transform-origin: 2% 50%;
+        }
+
+        @include arrowTransform( $angle, 0, -1px );
+
+        &:hover {
+          @include arrowTransform( $angleHover, 0, -1px );
+        }
+
+        &:active {
+          @include arrowTransform( $angleActive, 1px, -1px );
+        }
+
+        &.disabled:hover {
+            @include arrowTransform( $angle, 0, -1px );
+        }
+      }
+      &.right {
+        i {
+          transform-origin: 100% 50%;
+          -ms-transform-origin: 100% 50%;
+          -webkit-transform-origin: 100% 50%;
+        }
+        @include arrowTransform( $angle, 0, 1px );
+
+        &:hover {
+          @include arrowTransform( $angleHover, 0, 1px );
+        }
+
+        &:active {
+          @include arrowTransform( $angleActive, 1px, 1px );
+        }
+
+        &.disabled:hover {
+          @include arrowTransform( $angle, 0, 1px );
+        }
+      }
+      &.disabled {
+        opacity: 0.3;
+        cursor: default;
+
+        i {
+            background: $textmuted;
+        }
+      }
     }
 }

@@ -59,6 +59,8 @@ $textmuted: #848484;
 $accent: #2077b2;    
 {% endhighlight %}
 
+> Effective companies tend to communicate more, their people are curious and they have opinions
+
 config.yml:
 {% highlight yaml %}
 inc:
@@ -103,6 +105,6 @@ inc:
 <div class="full zoomable"><img src="/images/incorporated.jpg"></div>
 
 **Awesome quotes**
-> “Effective companies tend to communicate more, their people are curious and they have opinions”
+> Effective companies tend to communicate more, their people are curious and they have opinions
 
 Stay tuned for updates.
