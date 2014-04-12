@@ -433,8 +433,13 @@ a {
     .pagination-right {
         float: right;
 
-        a {
-            margin-right: -50px;
+        a:first-child {
+            float: right;
+            margin: 0;
+        }
+        a:last-child {
+            float: left;
+            margin-right: 10px;
         }
     }
     .disabled .label {
