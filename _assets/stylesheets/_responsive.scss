@@ -11,8 +11,10 @@
             float: right;
         }
     }
+    .mobile-nav {
+        display: none;
+    }
 }
-/**/
 
 @media (max-width: 720px) {
     
@@ -66,7 +68,7 @@
         }
         
         section {
-            padding:60px 0 0;
+            padding: 40px 0 0;
             text-align:center;
             
             a, a:last-child {
@@ -82,9 +84,12 @@
             font-size:1em;
         }
     }
-    
-    .site-nav .tagline span {
-        display:none;
+    .site-nav .tagline {
+        float: none;
+        
+        span {
+            display:none;
+        }
     }
     .site-footer {
         margin-top:0;
@@ -111,10 +116,13 @@
             display:none;
         }
     }
+    .mobile-nav {
+        display: block;
+    }
     .site-nav {
         #navigation {
             clear: both;
-            width: 50%;
+            width: 40%;
             
             .brand {
                 display:inline-block;
