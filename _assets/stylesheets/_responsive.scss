@@ -132,7 +132,6 @@
     .site-nav {
         #navigation {
             clear: both;
-            width: 20%;
             
             .brand {
                 display:inline-block;
@@ -180,6 +179,7 @@
               -webkit-transform: rotate(-45deg);
             }
             .collapse-nav {
+                display: none;
                 max-height: 0;
                 overflow: hidden;
                 clear: both;
