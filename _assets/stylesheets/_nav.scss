@@ -39,27 +39,20 @@
             border:0;
             margin:0 0.9em;
             display:inline-block;
+            font-weight: 600;
+            font-size: 15px;
             
             &:hover {
                 color: #444;
             }
         }
         
-        > a, .dropdown-toggle  {
+        > a  {
             color: $accent;
             border:0;
             font-weight:600;
             font-size:15px;
             display:inline-block;
-        }
-        
-        .dropdown-toggle {
-            padding: 6px 0.5em;
-            text-align: center;
-            
-            &:hover {
-                background:#eee;
-            }
         }
 
         /* navigation */
@@ -90,6 +83,7 @@
         span {
             line-height:0;
             padding-right:20px;
+            font-weight: 600;
         }
     }
 }

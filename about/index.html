@@ -1,57 +1,28 @@
 ---
 layout: base
 ---
-<div class="blog-cover" style="background-image:url(/images/{{ site.inc.cover_image }});">
 
+<div class="article-cover" style="background-image:url(/images/cover.jpg);">
     <section>
-        <div class="container">
-            <h1>{{ site.inc.title }}</h1>
-            {% if site.inc.subtitle %}<h3>{{ site.inc.subtitle }}</h3>{% endif %}
-
-            {% if site.inc.twitter %}
-            <a href="https://twitter.com/{{ site.inc.twitter }}" title="Follow on Twitter" target="_blank"><i class="icon icon-twitter"></i></a>
-            {% endif %}
-            {% if site.inc.facebook %}
-            <a href="http://facebook.com/{{ site.inc.facebook }}" title="Like on Facebook" target="_blank"><i class="icon icon-facebook"></i></a>
-            {% endif %}
-            {% if site.inc.gplus %}
-            <a href="http://facebook.com/{{ site.inc.gplus }}" title="Like on Google Plus" target="_blank"><i class="icon icon-gplus"></i></a>
-            {% endif %}
-            <a href="/feed.xml" title="RSS Feed">
-                <i class="icon icon-rss"></i>
-            </a>
-        </div>
+        <header>
+            <div class="meta">
+                <h1 class="title">About</h1>
+                <h3 class="subtitle">Aspire to Inspire</h3>
+            </div>
+        </header>
     </section>
 </div>
 
+<article id="about-page">
+    <div class="container">
+        <section>
+            <h4 id="mission">Mission</h4>
 
-<article class="container">
-{% for post in paginator.posts %}
-  {% unless post.draft %}
-    <section class="index">
-        <!-- {% if post.author.image %}<img src="/images/{{ post.author.image }}" class="avatar">{% endif %}-->
-        <div>
-            <h2 class="title"><a href="{{ post.url }}" rel="prefetch">{{ post.title }}</a></h2>
-            <p>{{ post.excerpt }}</p>
-            <div class="meta">
-                Written By <address>{{ post.author.name }}</address> &mdash;
-                <time pubdate datetime="{{ post.date | date: "%Y-%d-%B" }}" title="{{ post.date | date: "%B %d, %Y" }}">{{ post.date | date: "%B %d, %Y" }}</time>
-            </div>
-        </div>
-        <hr>
-    </section>
-    {% endunless %}
-    {% endfor %}
-    <section class="pagination" style="text-align:center">
-      {% if paginator.previous_page %}
-        {% if paginator.previous_page == 1 %}
-        <a href="/" class="btn btn-outline">‹ Newer</a>
-        {% else %}
-        <a href="/page{{ paginator.previous_page }}" class="btn btn-outline">‹ Newer</a>
-        {% endif %}
-      {% endif %}
-      {% if paginator.next_page %}
-        <a href="/page{{ paginator.next_page }}" class="btn btn-outline">Older ›</a>
-      {% endif %}
-    </section>
+            <p>To create a fitness app for all devices that empowers and motivate its users to overcome motivational lows and continue with their fitness goals. Through the use of clever stat and progress tracking, FitStory will be able to provide an indepth timeline, or story, of the user’s journey they took to achieve their goals.</p>
+
+            <p>Friends are able to share their stories and workout routines with their friends, empowering them to begin their own fitness journey. By sharing your successes and failures, you will be able to help guide and inspire your friends towards their own fitness success stories. Aspire to Inspire!</p>
+
+            {% include _social.html %}
+        </section>
+    </div>
 </article>

@@ -6,8 +6,8 @@
     <title>{% if page.title %}{{ page.title }} &mdash; {{ site.inc.title }}{% else %}{{ site.inc.title }} &mdash; {{ site.inc.subtitle }}{% endif %}</title>
     {% if site.inc.google_font %}<link href="https://fonts.googleapis.com/css?family={{ site.inc.google_font }}" rel="stylesheet" type="text/css">{% endif %}
     <link href="/assets/font-awesome-4.0.3/css/font-awesome.min.css" rel="stylesheet">
-    {% stylesheet main %}
-    <!--<link rel="stylesheet" href="/assets/main.css">-->
+    <!--{% stylesheet main %}-->
+    <link rel="stylesheet" href="/assets/main.css">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="/images/{{ site.inc.logo }}"/>
     <link href="{{ site_url }}/feed.xml" rel="alternate" type="application/rss+xml" title="{{ site.inc.title }}" />
@@ -81,25 +81,27 @@
 
 <footer class="site-footer">
     <div class="container">
-        <span>{{ site.inc.company }} &copy; {{ site.time | date: "%Y" }}</span>
+        <section>
+            <span>{{ site.inc.company }} &copy; {{ site.time | date: "%Y" }}</span>
 
-        <nav>
-            <a href="/">Blog</a> &middot;
-            {% if site.inc.product_link %}<a href="{{ site.inc.product_link }}">Product</a> &middot; {% endif %}
-            {% if site.inc.about_link %}<a href="{{ site.inc.about_link }}">About</a>{% endif %}
-        </nav>
+            <nav>
+                <a href="/">Blog</a> &middot;
+                {% if site.inc.product_link %}<a href="{{ site.inc.product_link }}">Product</a> &middot; {% endif %}
+                {% if site.inc.about_link %}<a href="{{ site.inc.about_link }}">About</a>{% endif %}
+            </nav>
 
-        <nav class="social">
-            {% if site.inc.twitter %}
-            <a class="twitter" href="https://twitter.com/{{ site.inc.twitter }}" title="Follow on Twitter" target="_blank"><i class="icon icon-twitter black"></i></a>
-            {% endif %}
-            {% if site.inc.facebook %}
-            <a class="facebook" href="http://facebook.com/{{ site.inc.facebook }}" title="Follow on Facebook" target="_blank"><i class="icon icon-facebook black"></i></a>
-            {% endif %}
-            <a class="rss" href="/feed.xml" title="RSS Feed">
-                <i class="icon icon-rss black"></i>
-            </a>
-        </nav>
+            <nav class="social">
+                {% if site.inc.twitter %}
+                <a class="twitter" href="https://twitter.com/{{ site.inc.twitter }}" title="Follow on Twitter" target="_blank"><i class="icon icon-twitter black"></i></a>
+                {% endif %}
+                {% if site.inc.facebook %}
+                <a class="facebook" href="http://facebook.com/{{ site.inc.facebook }}" title="Follow on Facebook" target="_blank"><i class="icon icon-facebook black"></i></a>
+                {% endif %}
+                <a class="rss" href="/feed.xml" title="RSS Feed">
+                    <i class="icon icon-rss black"></i>
+                </a>
+            </nav>
+        </section>
     </div>
 </footer>
 
