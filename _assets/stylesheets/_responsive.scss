@@ -12,6 +12,12 @@
             display: inline-block;
             float: right;
         }
+        .social-wrapper {
+          width: 30%;
+        }
+        .company-wrapper  {
+          width: 70%;
+        }
     }
     .mobile-nav {
         display: none;
@@ -108,9 +114,13 @@
         }
         .social {
             margin-top: 0;
-            display:block;
-            float:none;
-            padding:1em;
+            display: inline-block;
+            float: none;
+            padding: 1em;
+        }
+        .social-wrapper, .company-wrapper {
+            width: 100%;
+            float: none;
         }
     }
     

@@ -39,7 +39,7 @@
             <div class="collapse-nav">
                 <ul>
                     <li><a href="/" class="home">Blog</a></li>
-                    {% if site.inc.product_link %}<li><a href="{{ site.inc.product_link }}">Product</a></li>{% endif %}
+                    {% if site.inc.product_link %}<li><a href="{{ site.inc.product_link }}">FitStory</a></li>{% endif %}
                     {% if site.inc.about_link %}<li><a href="{{ site.inc.about_link }}">About</a></li>{% endif %}
                 </ul>
             </div>
@@ -81,25 +81,28 @@
 <footer class="site-footer">
     <div class="container">
         <section>
-            <span>{{ site.inc.company }} &copy; {{ site.time | date: "%Y" }}</span>
+            <div class="company-wrapper">
+                <nav>
+                    {{ site.inc.company }} &copy; {{ site.time | date: "%Y" }}
+                    <a href="/">Blog</a> &middot;
+                    {% if site.inc.product_link %}<a href="{{ site.inc.product_link }}">FitStory</a> &middot; {% endif %}
+                    {% if site.inc.about_link %}<a href="{{ site.inc.about_link }}">About</a>{% endif %}
+                </nav>
+            </div>
 
-            <nav>
-                <a href="/">Blog</a> &middot;
-                {% if site.inc.product_link %}<a href="{{ site.inc.product_link }}">Product</a> &middot; {% endif %}
-                {% if site.inc.about_link %}<a href="{{ site.inc.about_link }}">About</a>{% endif %}
-            </nav>
-
-            <nav class="social">
-                {% if site.inc.twitter %}
-                <a class="twitter" href="https://twitter.com/{{ site.inc.twitter }}" title="Follow on Twitter" target="_blank"><i class="icon icon-twitter black"></i></a>
-                {% endif %}
-                {% if site.inc.facebook %}
-                <a class="facebook" href="http://facebook.com/{{ site.inc.facebook }}" title="Follow on Facebook" target="_blank"><i class="icon icon-facebook black"></i></a>
-                {% endif %}
-                <a class="rss" href="/feed.xml" title="RSS Feed">
-                    <i class="icon icon-rss black"></i>
-                </a>
-            </nav>
+            <div class="social-wrapper">
+                <nav class="social">
+                    <a class="rss" href="/feed.xml" title="RSS Feed">
+                        <i class="icon icon-rss black"></i>
+                    </a>
+                    {% if site.inc.facebook %}
+                    <a class="facebook" href="http://facebook.com/{{ site.inc.facebook }}" title="Follow on Facebook" target="_blank"><i class="icon icon-facebook black"></i></a>
+                    {% endif %}
+                    {% if site.inc.twitter %}
+                    <a class="twitter" href="https://twitter.com/{{ site.inc.twitter }}" title="Follow on Twitter" target="_blank"><i class="icon icon-twitter black"></i></a>
+                    {% endif %}
+                </nav>
+            </div>
         </section>
     </div>
 </footer>
