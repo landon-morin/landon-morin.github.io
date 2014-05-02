@@ -1,10 +1,10 @@
 /* CONFIGURATION */
-@import url(http://fonts.googleapis.com/css?family=Dosis:300,400,500,600);
-/* Bodytext font */
-$font: "Dosis", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
+$body-font-family: "Open Sans", sans-serif;
+$font: "Open Sans", sans-serif;
 
 /* Font for headings */
-$fontheadings: "Dosis", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$fontheadings: "Open Sans", sans-serif;
 
 /* Text colors */
 $text: #47555C;
